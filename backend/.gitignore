@@ -1,0 +1,26 @@
+# Node.js
+node_modules/
+.env
+*.log
+*.local
+package-lock.json
+
+# Puppeteer Chromium user data
+chrome-user-data/
+*.pem
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Vite / frontend build
+dist/
+build/
+
+# VS Code settings (optional)
+.vscode/
+
+# Windows/Linux/Mac system cache
+*.swp
+*.swo
+*.bak
