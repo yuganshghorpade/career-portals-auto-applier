@@ -3,10 +3,8 @@ import mongoose from "mongoose"
 
 const dbConnect = async () =>{
     try {
-        // const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}/${process.env.DB_NAME}`)
-        console.log("Connected to Database");
+        const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}`)
     } catch (error) {
-        // throw new Error(505,`An unexpected error occured while connecting to Database. Error:-${error}`)
         console.log("An unexpected error occured while connecting to Database. Error:-",error);
     }
 }

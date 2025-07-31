@@ -5,7 +5,8 @@ import { ConsoleMessage } from 'puppeteer';
 
 export const getGlassdoorJobs = async (req, res) => {
   try {
-    const jobs = await scrapeGlassdoorJobs();
+    const keywords = req.body.keywords
+    const jobs = await scrapeGlassdoorJobs(keywords);
     console.log(jobs);
     res.status(200).json(new ApiResponse(200, jobs, 'Jobs fetched successfully'));
   } catch (error) {
