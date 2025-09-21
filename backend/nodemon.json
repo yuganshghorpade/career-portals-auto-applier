@@ -1,0 +1,19 @@
+{
+  "watch": ["src/**/*.js"],
+  "ignore": [
+    "node_modules/**/*",
+    "public/**/*",
+    "public/temp/**/*",
+    "cookies.json",
+    "*.log",
+    "logs/**/*",
+    "temp/**/*",
+    ".env",
+    "package-lock.json",
+    ".git/**/*"
+  ],
+  "ext": "js",
+  "delay": 2000,
+  "verbose": true,
+  "restartable": "rs"
+}
