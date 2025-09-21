@@ -92,9 +92,9 @@ function ResumeUpload() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${process.env.BASE_URL}/api/v1/resume/fetch`,
-        { withCredentials: true }
+        `${process.env.BASE_URL}/api/v1/resume/fetch`
       );
+      console.log(process.env.BASE_URL);
       setResumes(response.data);
     } catch (error) {
       console.error("error", error);
@@ -322,7 +322,7 @@ function ResumeUpload() {
               <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-xl">
                 <p className="text-sm text-blue-800 mb-2">✅ File uploaded successfully!</p>
                 <a
-                  href={`http://localhost:8000${uploadedFile}`}
+                  href={`${process.env.BASE_URL}/${uploadedFile}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm font-medium"
