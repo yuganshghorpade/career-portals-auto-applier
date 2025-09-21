@@ -52,13 +52,16 @@ const GlassdoorJobs = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const BASE_URL = process.env.BASE_URL;
+
+
   useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true);
       setError(null);
       try {
         const res = await axios.get(
-          "https://career-portals-auto-applier.onrender.com/api/v1/glassdoor/jobs"
+          `${BASE_URL}/api/v1/glassdoor/jobs`
         );
         setJobs(res.data.data || []);
       } catch (err) {

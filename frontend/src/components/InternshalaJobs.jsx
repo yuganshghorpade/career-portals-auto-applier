@@ -76,6 +76,8 @@ const InternshalaJobs = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const BASE_URL = process.env.BASE_URL;
+
   useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true);
@@ -83,7 +85,7 @@ const InternshalaJobs = () => {
 
       try {
         const res = await axios.get(
-          "https://career-portals-auto-applier.onrender.com/api/v1/internshala/jobs",
+          `${BASE_URL}/api/v1/internshala/jobs`,
           {
             withCredentials: true, // 👈 important for cookies/auth
             headers: {

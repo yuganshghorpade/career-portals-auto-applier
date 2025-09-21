@@ -24,11 +24,13 @@ function ResumeUpload() {
   const [selectedResumeObj, setSelectedResumeObj] = useState(null);
   const [autoApplyStatus, setAutoApplyStatus] = useState("");
 
+  const BASE_URL = process.env.BASE_URL;
+
   const fetchInternshalaJobs = async () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        `https://career-portals-auto-applier.onrender.com/api/v1/internshala/jobs`,
+        `${BASE_URL}/api/v1/internshala/jobs`,
         { keywords: resume },
         { withCredentials: true }
       );
@@ -48,7 +50,7 @@ function ResumeUpload() {
       console.log(selectedResumeObj.keywords);
       console.log(selectedResumeObj.localpath)
       const res = await axios.post(
-        `https://career-portals-auto-applier.onrender.com/api/v1/internshala/auto-apply`,
+        `${BASE_URL}/api/v1/internshala/auto-apply`,
         {
           keywords: selectedResumeObj.keywords,
           localpath: selectedResumeObj.localpath,
@@ -75,7 +77,7 @@ function ResumeUpload() {
     try {
       setLoading(true);
       const res = await axios.post(
-        `https://career-portals-auto-applier.onrender.com/api/v1/glassdoor/jobs`,
+        `${BASE_URL}/api/v1/glassdoor/jobs`,
         { keywords: resume },
         { withCredentials: true }
       );
@@ -92,7 +94,7 @@ function ResumeUpload() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://career-portals-auto-applier.onrender.com/api/v1/resume/fetch`
+        `${BASE_URL}/api/v1/resume/fetch`
       );
       console.log(process.env.BASE_URL);
       setResumes(response.data);
@@ -133,7 +135,7 @@ function ResumeUpload() {
 
     try {
       const res = await axios.post(
-        `https://career-portals-auto-applier.onrender.com/api/v1/resume/upload`,
+        `${BASE_URL}/api/v1/resume/upload`,
         formData,
         {
           headers: {
