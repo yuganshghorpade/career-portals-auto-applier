@@ -98,7 +98,7 @@ function Tracker() {
     async function fetchApplications() {
       try {
         // Mock API call - replace with your actual axios call
-        const res = await axios.get(`${process.env.BASE_URL}/api/v1/internshala/track`);
+        const res = await axios.get(`https://career-portals-auto-applier.onrender.com/api/v1/internshala/track`);
         console.log("res",res)
         
         if (res.data && res.data.data) {

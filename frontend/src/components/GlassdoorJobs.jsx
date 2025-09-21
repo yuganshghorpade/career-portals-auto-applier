@@ -10,7 +10,7 @@ const GlassdoorJobs = () => {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`${process.env.BASE_URL}/api/v1/glassdoor/jobs`);
+        const res = await fetch(`https://career-portals-auto-applier.onrender.com/api/v1/glassdoor/jobs`);
         if (!res.ok) throw new Error('Failed to fetch jobs');
         const data = await res.json();
         setJobs(data.data || []);

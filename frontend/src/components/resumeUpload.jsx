@@ -28,7 +28,7 @@ function ResumeUpload() {
     try {
       setLoading(true);
       const res = await axios.post(
-        `${process.env.BASE_URL}/api/v1/internshala/jobs`,
+        `https://career-portals-auto-applier.onrender.com/api/v1/internshala/jobs`,
         { keywords: resume },
         { withCredentials: true }
       );
@@ -48,7 +48,7 @@ function ResumeUpload() {
       console.log(selectedResumeObj.keywords);
       console.log(selectedResumeObj.localpath)
       const res = await axios.post(
-        `${process.env.BASE_URL}/api/v1/internshala/auto-apply`,
+        `https://career-portals-auto-applier.onrender.com/api/v1/internshala/auto-apply`,
         {
           keywords: selectedResumeObj.keywords,
           localpath: selectedResumeObj.localpath,
@@ -75,7 +75,7 @@ function ResumeUpload() {
     try {
       setLoading(true);
       const res = await axios.post(
-        `${process.env.BASE_URL}/api/v1/glassdoor/jobs`,
+        `https://career-portals-auto-applier.onrender.com/api/v1/glassdoor/jobs`,
         { keywords: resume },
         { withCredentials: true }
       );
@@ -92,7 +92,7 @@ function ResumeUpload() {
     setLoading(true);
     try {
       const response = await axios.get(
-        `${process.env.BASE_URL}/api/v1/resume/fetch`
+        `https://career-portals-auto-applier.onrender.com/api/v1/resume/fetch`
       );
       console.log(process.env.BASE_URL);
       setResumes(response.data);
@@ -133,7 +133,7 @@ function ResumeUpload() {
 
     try {
       const res = await axios.post(
-        `${process.env.BASE_URL}/api/v1/resume/upload`,
+        `https://career-portals-auto-applier.onrender.com/api/v1/resume/upload`,
         formData,
         {
           headers: {
@@ -322,7 +322,7 @@ function ResumeUpload() {
               <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-xl">
                 <p className="text-sm text-blue-800 mb-2">✅ File uploaded successfully!</p>
                 <a
-                  href={`${process.env.BASE_URL}/${uploadedFile}`}
+                  href={`https://career-portals-auto-applier.onrender.com/${uploadedFile}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm font-medium"

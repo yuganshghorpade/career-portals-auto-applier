@@ -10,7 +10,7 @@ const InternshalaJobs = () => {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`${process.env.BASE_URL}/api/v1/internshala/jobs`);
+        const res = await fetch(`https://career-portals-auto-applier.onrender.com/api/v1/internshala/jobs`);
         // console.log(res);
         if (!res.ok) throw new Error('Failed to fetch jobs');
         const data = await res.json();
