@@ -28,7 +28,7 @@ function ResumeUpload() {
     try {
       setLoading(true);
       const res = await axios.post(
-        "https://career-portals-auto-applier-inq6.vercel.app/api/v1/internshala/jobs",
+        `${process.env.BASE_URL}/api/v1/internshala/jobs`,
         { keywords: resume },
         { withCredentials: true }
       );
@@ -48,7 +48,7 @@ function ResumeUpload() {
       console.log(selectedResumeObj.keywords);
       console.log(selectedResumeObj.localpath)
       const res = await axios.post(
-        "https://career-portals-auto-applier-inq6.vercel.app/api/v1/internshala/auto-apply",
+        `${process.env.BASE_URL}/api/v1/internshala/auto-apply`,
         {
           keywords: selectedResumeObj.keywords,
           localpath: selectedResumeObj.localpath,
@@ -75,7 +75,7 @@ function ResumeUpload() {
     try {
       setLoading(true);
       const res = await axios.post(
-        "https://career-portals-auto-applier-inq6.vercel.app/api/v1/glassdoor/jobs",
+        `${process.env.BASE_URL}/api/v1/glassdoor/jobs`,
         { keywords: resume },
         { withCredentials: true }
       );
@@ -92,7 +92,7 @@ function ResumeUpload() {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://career-portals-auto-applier-inq6.vercel.app/api/v1/resume/fetch",
+        `${process.env.BASE_URL}/api/v1/resume/fetch`,
         { withCredentials: true }
       );
       setResumes(response.data);
@@ -133,7 +133,7 @@ function ResumeUpload() {
 
     try {
       const res = await axios.post(
-        "https://career-portals-auto-applier-inq6.vercel.app/api/v1/resume/upload",
+        `${process.env.BASE_URL}/api/v1/resume/upload`,
         formData,
         {
           headers: {
